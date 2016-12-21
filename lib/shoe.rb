@@ -10,7 +10,7 @@ class Shoe
   def initialize(brand) #uses global variables to hold all brands and all unique brands 
     @brand = brand
     @@brands << brand
-    @@brands = @@brands.uniq
+    @@brands = @@brands.uniq #makes each new shoe brand different
   end
   
   def self.brands #defines a method for each brand of shoe
