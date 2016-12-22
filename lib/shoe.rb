@@ -5,8 +5,17 @@ class Shoe
   # create a class variable that will keep track of all of the brands
   @@brands = []
   
+  def initialize(brand)
+  @brand = brand
+  @@brands << brand
+  @@brands = @@brands.uniq #makes sure brands in already are different/unqiue
+  end
+  
   # each new shoe that gets created MUST have a brand
   # NOTE: unique brands should be added to the class variable of brands
+  def self.brands
+  @@brands
+  end
   
   
   # how will Shoe.brands be able to retrieve all of those brands?
