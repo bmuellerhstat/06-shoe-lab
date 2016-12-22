@@ -13,4 +13,15 @@ class Shoe
   # REMEMBER: class methods start with self
   
   
+  def initialize(brand)
+  @brand = brand
+  @@brands << brand
+  @@brands.uniq!
+  end
+  
+  def self.brands
+    @@brands
+  end
+
+  
 end
