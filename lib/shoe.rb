@@ -12,5 +12,18 @@ class Shoe
   # how will Shoe.brands be able to retrieve all of those brands?
   # REMEMBER: class methods start with self
   
+
+  @@brands = [] 
+   
+  def initialize(brand)
+    @brand = brand
+    @@brands << brand
+    @@brands = @@brands.uniq
+  end
+   
+  def self.brands 
+    @@brands
+  end
+end 
+
   
-end
