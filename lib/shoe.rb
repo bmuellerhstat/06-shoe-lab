@@ -9,7 +9,10 @@ class Shoe
   # NOTE: unique brands should be added to the class variable of brands
   def brand= (brand)
     @brand = brand  
-    @@brand << brand
+    #Condition below: Checks if the brand is unique. If so, add it into the class variable.  
+    if @@brand.include?(brand) == false
+      @@brands << brand 
+    end
   end
   
   # how will Shoe.brands be able to retrieve all of those brands?
