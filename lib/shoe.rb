@@ -11,6 +11,18 @@ class Shoe
   
   # how will Shoe.brands be able to retrieve all of those brands?
   # REMEMBER: class methods start with self
+  @@brands = []
+
+  def initialize(brand)
+    @brand = brand
+    if @@brands.include? brand
+      @@brands.delete(brand)
+    end
+    @@brands << brand
+    
+  end
   
-  
+  def self.brands
+    @@brands
+  end
 end
