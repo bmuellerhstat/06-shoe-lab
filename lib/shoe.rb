@@ -1,10 +1,16 @@
 class Shoe
   attr_accessor :color, :size, :material, :condition
   attr_reader :brand
-  
+  def initialize(brand)
+    @brand = brand
+    @@brands << brand
+  end
   # create a class variable that will keep track of all of the brands
-  
-  
+    @@brands=[]
+  def self.brands
+    @@brands.uniq
+  end
+
   # each new shoe that gets created MUST have a brand
   # NOTE: unique brands should be added to the class variable of brands
   
