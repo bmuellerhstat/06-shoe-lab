@@ -7,12 +7,13 @@ class Shoe
   
   # each new shoe that gets created MUST have a brand
   # NOTE: unique brands should be added to the class variable of brands
+  
   def initialize(brand)
-    @brand = brand 
+    @brand = brand
   end 
   
-  def self.brand
-    @@brands
+  def self.brands
+    @@brands.uniq
   end 
   
   def brand=(brand)
@@ -20,8 +21,19 @@ class Shoe
     @@brands << brand
   end 
 
+   
   # how will Shoe.brands be able to retrieve all of those brands?
   # REMEMBER: class methods start with self
   
   
 end
+
+ugg = Shoe.new("Uggs")
+rainbow = Shoe.new("Rainbow")
+nike_1 = Shoe.new("Nike")
+nike_2 = Shoe.new("Nike")
+
+ugg.brand=("Uggs")
+rainbow.brand =("Rainbow")
+nike_1.brand = ("Nike")
+nike_2.brand = ("Nike")
